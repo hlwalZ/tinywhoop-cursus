@@ -1,0 +1,111 @@
+/* Ik ben me er van bewust dat 'mobieleStijl.css' ook wordt getriggerd zodra de window breedte minder dan 797px is bij desktops,
+ dit is bewust zo gedaan omdat het ook voor desktops er beter uit zal zien. */
+
+@media screen and (max-device-width: 797px) and (orientation: portrait) {
+  /* .verstop-footer-mobiel {
+    display: none;
+  } */
+}
+
+/* Header */
+li {
+  font-size: 1.5rem;
+}
+
+/* Aanpassingen voor de home pagina */
+
+.intro-omvang,
+.contact-omvang {
+  border-radius: 1vw 1vw 1vw 1vw;
+  width: 85vw;
+}
+
+.foto-en-omschrijving {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.omschrijvende-tekst-foto {
+  font-size: 2.4vh;
+  margin: 0;
+  margin-bottom: 2.5%;
+}
+
+.foto-stijl {
+  width: 15vh;
+  height: 15vh;
+  border-radius: 5px;
+  margin-top: 5%;
+  margin-bottom: 2.5%;
+}
+
+.welkom {
+  font-size: 2.4vh;
+}
+
+.welkom h2 {
+  font-size: 2.5vh;
+}
+
+/* Aanpassingen voor projecten pagina in 'mobiele mode' */
+
+.foto-dialog-vorige {
+  position: absolute;
+  top: 50%;
+  font-size: 5vh;
+  left: 0;
+}
+
+.foto-dialog-volgende {
+  position: absolute;
+  top: 50%;
+  font-size: 5vh;
+  right: 0;
+}
+
+.foto-dialog-fit {
+  height: 100%;
+  width: 100%;
+}
+
+dialog pre {
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  font-size: 2vh;
+}
+
+dialog h1 {
+  font-size: 2.4vh;
+  margin-top: 1.5rem;
+}
+
+dialog h2 {
+  font-size: 2.4vh;
+}
+
+/* Updates pagina aanpassingen komen hier uiteindelijk */
+
+/* Aanpassingen voor contact pagina */
+
+.mail-container p {
+  font-size: 1.75vh;
+}
+
+.contact-omvang h1 {
+  font-size: 4vh;
+}
+
+.social-media-contact svg,
+.mail-container svg {
+  width: 4vh;
+  height: 4vh;
+  padding-left: 10%;
+}
+
+/* Nieuw */
+
+.temp {
+  margin: 1vw;
+}

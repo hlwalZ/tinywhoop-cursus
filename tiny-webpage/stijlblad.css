@@ -1,0 +1,701 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+
+.navigatie-balk {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nu-hier,
+nav a:link:hover {
+  border-bottom: solid 3px #7dc1ff;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f5f5f7;
+  margin: 1rem;
+  border: none #7dc1ff;
+  transition: color 0.25s; /* only animate color on hover */
+}
+
+nav ul {
+  margin-bottom: 15px;
+}
+
+/* li is een globale selector, dit wordt ook toegepast op de social media link lijst */
+li a {
+  list-style-type: none;
+  font-size: 3rem;
+}
+
+/* Einde header */
+
+/* Hiermee wordt één flexbox gemaakt rondom content delen van meerdere pagina's */
+.timeline {
+  cursor: pointer;
+  overflow: hidden;
+  margin-right: auto;
+  height: auto;
+  width: auto;
+}
+
+.social-media-links {
+  margin-left: auto;
+}
+
+.timeline-text-1 {
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+
+.timeline-inner-padding {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.timeline-text-2 {
+  border-top: 1px solid;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-color: #424245;
+  font-size: 2rem;
+}
+
+.timeline-button-group {
+  border: 1px solid #424245;
+  width: 300px;
+  height: 100px;
+  position: relative;
+  background-image: #333336;
+  z-index: 1;
+  transition: opacity 0.5s linear;
+  background: #333336;
+  color: #f5f5f7;
+}
+
+.timeline-button-group::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(270deg, #333336 93.64%, #7dc1ff 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.timeline-button-group:hover::before {
+  opacity: 1;
+}
+
+/* .timeline-button-group:hover {
+  background: linear-gradient(to left, #333336 80%, #7dc1ff 100%);
+} */
+
+.social-media-borders {
+  display: grid;
+  width: 300px;
+  height: 100px;
+  background-color: #333336;
+  align-content: center;
+}
+
+.social-media-href {
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: #f5f5f7;
+}
+
+.social-media-href:hover {
+  color: #7dc1ff;
+}
+
+.intro-omvang {
+  align-items: center;
+}
+
+.intro-container {
+  display: flex;
+}
+
+.contact-container,
+.omschrijvende-tekst-foto,
+.social-media-navigatie,
+.item-container,
+.herhalende-border,
+.updates-flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Omvang van de gehele intro (de grote box om alle intro-inhoud) */
+
+.intro-omvang,
+.contact-omvang {
+  background-color: #333336;
+  width: 60vw;
+  border-radius: 1vw;
+  padding-bottom: 5%;
+  transition: 0.5s;
+  height: 80vh;
+  /* border-top-left-radius: 8vw zodat het niet achter de image uitsteekt */
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Einde uitlijning van alle intro-inhoud */
+
+/* Start Sectie 1: */
+
+/* Dit wordt gebruikt om in 'intro-omvang' de eerste flexbox item te maken */
+
+.foto-en-omschrijving {
+  display: flex;
+}
+
+.foto-stijl {
+  border-radius: 10vw;
+  box-shadow: 1vw 1vw 5vw #a7dfe7;
+  width: 15vw;
+  height: 15vw;
+}
+
+.omschrijvende-tekst-foto {
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2.75vw;
+  font-size: 2.5vh;
+}
+
+/* Dit gaat over de tekst die rechts naast de afbeelding staat [in desktop mode] */
+
+/* Einde Sectie 1 */
+
+/* Start Sectie 2 */
+
+/* Dit wordt gebruikt om in 'intro-omvang' een tweede flexbox item te maken */
+
+.welkom {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.4vh;
+  margin: 0 7vw;
+  margin-top: 1vh;
+}
+.welkom h2 {
+  font-size: 3vh;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.welkom p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+/* Einde sectie 2  */
+
+/* Start sectie 3 */
+.social-media-navigatie {
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.LISTR {
+  border-top: 2px solid #424242;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-clip: content-box;
+}
+
+/* .social-media-navigatie a {
+  margin: 1vw;
+} */
+
+/* Start Projecten Tiles */
+
+/* .grid-container {
+  align-content: center;
+  justify-content: center;
+  display: grid;
+} */
+/* Maakt container */
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  width: 70%;
+  max-width: 80%;
+  margin: 0 auto; /* centers it */
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Grid systeem afhankelijk van schermbreedte */
+
+.item-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ghost container, maakt een maximale waarde aan voor het item om naar te groeien (in de button) */
+
+.uit-Vergroten {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border: solid 5px #7dc1ff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.uit-Vergroten:hover {
+  transform: scale(1.05);
+  border-color: #a7dfe7;
+}
+/* Later in JavaScript een hover event toevoegen, zodat het effect niet plaatsvindt als je de pagina laad. */
+
+/* Sectie over modal */
+/* Ja ik weet dat die over alle buttons zal vallen, alleen maakt het niet zo veel voor mij uit omdat ik ze minimaal gebruik in de dialog */
+button {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none;
+}
+/* Verstopt alle stijlen van de button en triggerd modal [In JavaScript] */
+
+dialog {
+  background: #333336;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  color: #f5f5f7;
+  /* border-color: #333336; */
+  border: none;
+  border-left: 10px solid #7dc1ff; /* visible left border */
+
+  transition: 2s;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0);
+  /* Verander user-agent backdrop */
+}
+
+dialog header {
+  font-size: 2vh;
+  text-shadow: 1px 1px 2px black;
+}
+
+.module-flex {
+  display: flex;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.module-intro li {
+  counter-increment: item;
+  padding-left: 2em;
+  position: relative;
+}
+
+.module-intro li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+}
+
+.sum-background {
+  background-color: #424245;
+  font-size: 2.4vh;
+}
+
+.module-intro {
+  list-style: none;
+  padding: 0;
+
+  line-height: 1.25em;
+
+  margin: auto;
+
+  text-shadow: 1px 1px 2px black;
+}
+
+dialog h2 {
+  font-size: 3.5vh;
+  /* border-top: solid 2px black; */
+  text-shadow: 1px 1px 2px black;
+}
+
+.herhalende-border {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* border-bottom: solid 2px black; */
+}
+
+.kruisje {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 4vh;
+  color: #f5f5f7;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.foto-dialog-fit {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  border-bottom: solid 5px black;
+}
+
+.foto-dialog-fit:first-child {
+  border-top: solid 5px black;
+}
+
+.foto-dialog-midden {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.foto-dialog-vorige {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  font-size: 5vh;
+  background-color: #a7dfe7;
+  color: #f8f2da;
+}
+
+.header-hidden {
+  visibility: hidden; /* Hides visually */
+  /* Padding, margin, height stay as-is */
+}
+
+.foto-dialog-volgende {
+  position: absolute;
+  top: 50%;
+  font-size: 5vh;
+  right: 20%;
+  background-color: #a7dfe7;
+  color: #f8f2da;
+}
+.updates-max-vergroting {
+  position: relative;
+}
+
+.video-alt {
+  font-size: 3rem; /* bigger text */
+  color: white;
+  text-align: center;
+  margin-top: 1rem; /* spacing below iframe */
+  display: block; /* behaves like normal content */
+}
+
+/* Pseudo-element for alt text */
+
+.updates-balk {
+  margin-bottom: 8vh;
+  width: 75%;
+  height: 20vh;
+  overflow: hidden;
+  transition:
+    height 0.4s ease,
+    width 0.4s ease,
+    margin 0.4s ease,
+    opacity 0.3s ease;
+}
+
+/* Active card */
+.updates-balk.active {
+  width: 90%;
+  height: 80vh;
+}
+
+/* Collapsing animation */
+.updates-balk.collapsing {
+  height: 0;
+  margin-top: 0;
+  opacity: 0;
+}
+
+/* Einde projecten */
+
+/* Start updates */
+
+.updates-max-vergroting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.updates-max-vergroting a {
+  text-decoration: none;
+  color: #f8f2da;
+  overflow: hidden;
+}
+
+.updates-balk {
+  width: 75%;
+
+  background: linear-gradient(to left, #333336 98%, #7dc1ff 9%);
+  border-radius: 25px;
+  height: 20vh;
+  transition: 0.5s;
+}
+
+.updates-balk:hover {
+  width: 90%;
+}
+
+.updates-balk h1 {
+  font-size: 3vh;
+  text-align: center;
+  overflow: hidden;
+}
+/* JS event class */
+.vergroot-balk {
+  width: 90%;
+  height: 80vh;
+}
+
+/* Einde updates */
+
+/* Start contact */
+
+footer h2 {
+  margin-top: 5vw;
+  text-align: center;
+}
+
+/* Let op, kan misschien voor problemen zorgen later */
+
+.contact-omvang {
+  border-radius: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mail-container {
+  display: flex;
+  align-items: center;
+}
+
+.kopieer-mail {
+  transition: 0.25s;
+  color: #a7dfe7;
+  cursor: pointer;
+}
+
+.contact-omvang h1 {
+  font-size: 5vh;
+}
+
+.contact-omvang p {
+  font-size: 3vh;
+}
+
+.mail-container svg {
+  padding-left: 10%;
+}
+
+/* Einde contacten */
+
+/* Nieuwe code */
+
+.intro-model {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.model-fix {
+  transition: 0.5s;
+  object-fit: contain;
+  height: 50vh;
+  width: 80%;
+}
+model-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+.temp {
+  margin: 1vw;
+}
+
+.testhide {
+  display: grid;
+}
+/* Testhide is gelinked aan de projecten modals  */
+
+/* .verstop-footer-mobiel ook uitgezet i.v.m. svg's */
+
+a svg path {
+  fill: #f5f5f7;
+  transition: fill 0.3s ease;
+}
+
+a:hover svg path {
+  fill: #7dc1ff;
+}
+
+.go-home-button {
+  justify-content: center;
+  gap: 5%;
+  display: flex;
+  flex-direction: row; /* 👈 override column */
+  width: auto;
+  height: auto;
+  line-height: 25px; /* Vertically centers text */
+  text-align: center; /* Horizontally centers text */
+  /* border: 2px solid black; */
+  /* Black border */
+  padding-left: 3%;
+  padding-right: 3%;
+  text-decoration: none; /* Remove underline */
+  color: black; /* Text color */ /* Optional: adjust text size */
+  /* border-radius: 0px 0px 5px 5px; Optional: rounded corners */
+
+  margin-bottom: 0;
+  font-size: 2vh;
+  margin-bottom: 1rem;
+}
+
+.link-background {
+  cursor: pointer;
+  color: #f5f5f7;
+  background-color: #0071e3;
+  /* border-radius: 25% 25% 25% 25%;
+  width: 30%; */
+  /* height: 100%; */
+  text-decoration: none;
+  width: 30vh;
+  margin-top: 20px;
+}
+
+a.link-background {
+  background-color: #0071e3;
+  /* color: #f5f5f7; */
+
+  display: inline-block;
+  padding: 10px 20px; /* controls oval size */
+
+  border-radius: 9999px;
+  text-decoration: none;
+}
+
+.link-background:visited {
+  color: #f5f5f7; /* same as normal */
+  text-decoration: none;
+}
+
+.dialog-center {
+  display: flex;
+  /* position: relative; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.ending-border {
+  /* border-bottom: solid 2px black;
+  border-right: solid 2px black;
+  border-left: solid 2px black; */
+  display: flex;
+  justify-content: center;
+  /* padding: 1rem 1% 1rem 1%; */
+  margin: 0 20%;
+}
+
+.button-borderrr {
+  border-right: solid 2px black;
+  border-left: solid 2px black;
+  padding: 1rem 1% 1rem 1%;
+  margin: 0 20%;
+}
+
+.updates-balk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.new-content {
+  display: none;
+  background-color: (to left, #333336 98%, #7dc1ff 9%);
+}
+
+.updates-balk.active .new-content {
+  display: block;
+  background-color: linear-gradient(to left, #333336 98%, #7dc1ff 9%);
+  /* width: 100%;
+  height: 100%; */
+}
+
+.content-header-inner {
+  margin-bottom: 32px;
+}
+
+.updates-balk.active .content-header {
+  display: none;
+}
+
+.updates-balk.active {
+  display: inline;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.les-tekst-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.les-tekst-style {
+  width: 60%;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
